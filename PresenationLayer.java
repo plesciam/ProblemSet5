@@ -2,7 +2,7 @@ package ProblemSet5;
 
 import java.util.Scanner;
 
-public class PresenationLayer 
+public class PresentationLayer 
 {
     public static void main(String[] args)
     {
@@ -12,26 +12,10 @@ public class PresenationLayer
     String password = userInformation.nextLine();
 
     DAL dal = new DAL(userName, password);
-    PresenationLayer PL = new PresenationLayer();
+    PresentationLayer PL = new PresentationLayer();
 
-    if(dal.TryExecutingAQuery(userName, password))
-    {
-        System.out.println("Successfully connected to the database");
-        call.dal();
-    }
-    else
     {
         System.out.println("Failed to connect to the database");
     }
-    if (dal.TryExecutingAStoredProcedure("WilliamsMagi9cShop", userName, password))
-    {
-        System.out.println("Successfully ran a stored procedure");
-        call.dal();
-    }
-     else
-    {
-        System.out.println("Failed to run a stored procedure");
-    }
-
 }
 }
